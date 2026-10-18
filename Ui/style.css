@@ -1,0 +1,119 @@
+/* - HEALTHYME GLOBAL THEME - */
+
+/* - Color variables - */
+
+:root {
+    --hm-green-dark: #24563A;
+    --hm-green: #47A875;
+    --hm-green-soft: #E6F5ED;
+    --hm-green-border: #CCEBDC;
+    --hm-card-border: #DDEBE1;
+}
+
+/* Lighter greens so headings stay readable in dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --hm-green-dark: #8FD6AE;
+        --hm-green: #47A875;
+        --hm-green-soft: #1F3A2B;
+        --hm-green-border: #2F5A43;
+        --hm-card-border: #2E4A3A;
+    }
+}
+
+
+/* - Headings - */
+
+h1,
+h2,
+h3 {
+    color: var(--hm-green-dark);
+}
+
+
+/* - Buttons - */
+
+.stButton > button {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 10px 16px;
+    transition: 0.2s ease;
+}
+
+.stButton > button:hover {
+    border-color: var(--hm-green);
+}
+
+
+/* ---------- Metric cards ----------
+   (replaces the inline <style> that was in history.py) */
+
+div[data-testid="stMetric"] {
+    background: var(--secondary-background-color);
+    border: 1px solid var(--hm-card-border);
+    border-radius: 14px;
+    padding: 14px 16px;
+}
+
+div[data-testid="stMetricLabel"],
+div[data-testid="stMetricLabel"] p,
+div[data-testid="stMetricValue"],
+div[data-testid="stMetricValue"] div {
+    color: var(--text-color) !important;
+}
+
+
+/* - Avatar placeholder - (replaces the inline style in profile.py) */
+
+.hm-avatar-placeholder {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--hm-green-soft);
+    border: 3px solid var(--hm-green-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+}
+
+/* - Login / Create Profile card - */
+
+.st-key-auth_card {
+    max-width: 480px;
+    margin: 2rem auto;
+    padding: 2rem 2.25rem;
+    background: var(--secondary-background-color);
+    border: 1px solid var(--hm-card-border);
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Center every heading inside the card */
+.st-key-auth_card [data-testid="stHeading"] {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.st-key-auth_card h1,
+.st-key-auth_card h2,
+.st-key-auth_card h3,
+.st-key-auth_card p {
+    text-align: center;
+    text-wrap: balance;
+}
+
+.st-key-auth_card h1 {
+    font-size: 2rem;
+}
+
+/* Centered heading used on the login / create profile card */
+.hm-center {
+    text-align: center;
+}
+
+/* Keep form labels (Username, Password...) left-aligned */
+.st-key-auth_card [data-testid="stWidgetLabel"] p {
+    text-align: left;
+}

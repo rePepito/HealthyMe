@@ -1,0 +1,63 @@
+/* - For copy button in pfp - */
+:root {
+    --hm-btn: #278253;
+    --hm-btn-hover: #1e6841;
+    --hm-btn-copied: #185b39;
+    --hm-focus: #a8dfbd;
+    --hm-status: #278253;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --hm-status: #8FD6AE;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+#copyCard {
+    width: 100%;
+    padding: 13px 18px;
+    border: 1px solid var(--hm-btn);
+    border-radius: 12px;
+    background: var(--hm-btn);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#copyCard:hover {
+    background: var(--hm-btn-hover);
+    box-shadow: 0 4px 12px rgba(39, 130, 83, 0.25);
+    transform: translateY(-2px);
+}
+#copyCard:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#copyCard:focus-visible {
+    outline: 3px solid var(--hm-focus);
+    outline-offset: 2px;
+}
+
+#copyCard.copied {
+    background: var(--hm-btn-copied);
+    border-color: var(--hm-btn-copied);
+}
+
+#copyStatus {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: var(--hm-status);
+}

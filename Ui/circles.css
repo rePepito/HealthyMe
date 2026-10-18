@@ -1,0 +1,105 @@
+/* 
+   CIRCLE COMPONENTS (water + exercise)
+   Injected inside components.html() iframes only. */
+:root {
+    --hm-green-dark: #24563A;
+    --hm-green: #47A875;
+    --hm-circle-bg: #F1F8F3;
+    --hm-circle-track: #E0EAE3;
+    --hm-outline: #CDE7D6;
+    --hm-muted: #607768;
+    --hm-water-primary: #4BA3DF;
+    --hm-water-secondary: #339DD4;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --hm-green-dark: #8FD6AE;
+        --hm-circle-bg: #1B2B22;
+        --hm-circle-track: #2E4A3A;
+        --hm-outline: #2F5A43;
+        --hm-muted: #A9C2B3;
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+/* - Layout - */
+
+.hm-circle-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.hm-circle-svg {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: 200px;
+}
+
+/* - Water circle -  */
+
+.hm-water-background {
+    fill: var(--hm-circle-bg);
+    stroke: var(--hm-outline);
+    stroke-width: 2;
+}
+.hm-water-wave-primary {
+    fill: var(--hm-water-primary);
+}
+.hm-water-wave-secondary {
+    fill: var(--hm-water-secondary);
+    opacity: 0.55;
+}
+.hm-water-outline {
+    fill: none;
+    stroke: var(--hm-outline);
+    stroke-width: 2;
+}
+.hm-water-value,
+.hm-water-label {
+    font-family: Arial, sans-serif;
+    text-anchor: middle;
+    fill: var(--hm-green-dark);
+}
+.hm-water-value {
+    font-size: 23px;
+    font-weight: bold;
+}
+.hm-water-label {
+    font-size: 13px;
+}
+.hm-on-water .hm-water-value,
+.hm-on-water .hm-water-label {
+    fill: #FFFFFF;
+}
+
+/* - Exercise circle -  */
+.hm-exercise-background {
+    fill: var(--hm-circle-bg);
+    stroke: var(--hm-circle-track);
+    stroke-width: 12;
+}
+.hm-exercise-progress {
+    fill: none;
+    stroke: var(--hm-green);
+    stroke-width: 12;
+    stroke-linecap: round;
+}
+.hm-exercise-value {
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    text-anchor: middle;
+    fill: var(--hm-green-dark);
+}
+.hm-exercise-label {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    text-anchor: middle;
+    fill: var(--hm-muted);
+}
